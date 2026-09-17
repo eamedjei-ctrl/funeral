@@ -360,9 +360,9 @@
 
   var WHATSAPP_NUMBER = '233553258224';
   var CARE_EMAIL = 'info@memorialplannerfuneralservices.com';
-  // Create a form at https://formspree.io (free tier), point it at CARE_EMAIL,
-  // and paste its endpoint below to enable automatic email delivery.
-  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/meaoqrnr';
+  // Get a free access key at https://web3forms.com (sent instantly to your
+  // inbox, no dashboard setup) and paste it below to enable email delivery.
+  var WEB3FORMS_ACCESS_KEY = '';
 
   function buildRequestLines(ref){
     var data = new FormData(form);
@@ -387,21 +387,28 @@
 
   function sendRequestEmail(ref, lines){
     var statusEl = document.getElementById('confirmation-email-status');
-    if (!FORMSPREE_ENDPOINT) {
+    if (!WEB3FORMS_ACCESS_KEY) {
       if (statusEl) statusEl.textContent = '';
       return;
     }
     if (statusEl) statusEl.textContent = 'Sending a copy to our care team…';
     var data = new FormData(form);
-    data.set('_subject', 'Arrangement Request #' + ref);
-    data.set('reference', ref);
-    data.set('message', lines.join('\n'));
-    fetch(FORMSPREE_ENDPOINT, {
+    var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: 'Arrangement Request #' + ref,
+      from_name: data.get('contactName') || 'Memorial Planner Website',
+      reference: ref,
+      message: lines.join('\n')
+    };
+    if (data.get('email')) payload.email = data.get('email');
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: data
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
     }).then(function(res){
-      if (statusEl) statusEl.textContent = res.ok ? 'Emailed to our care team.' : 'Could not confirm the email sent — please use the link below as backup.';
+      return res.json().then(function(json){ return { ok: res.ok && json.success, json: json }; });
+    }).then(function(result){
+      if (statusEl) statusEl.textContent = result.ok ? 'Emailed to our care team.' : 'Could not confirm the email sent — please use the link below as backup.';
     }).catch(function(){
       if (statusEl) statusEl.textContent = 'Could not confirm the email sent — please use the link below as backup.';
     });
