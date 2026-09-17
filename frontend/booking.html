@@ -58,6 +58,19 @@
 <p class="font-body-lg text-body-lg text-secondary max-w-xl mx-auto">Take your time. A dedicated care director will personally review every detail with your family before anything is finalized.</p>
 </div>
 
+<!-- Direct Booking Contact Options -->
+<div class="max-w-2xl mx-auto mb-space-xl rounded-2xl border border-outline-variant bg-surface-container-lowest p-space-md md:p-space-lg">
+  <p class="font-label-md text-label-md text-secondary text-center mb-space-sm">Prefer to book directly? Reach us on WhatsApp or by email and a care director will assist you personally.</p>
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-space-sm">
+    <a class="inline-flex items-center justify-center gap-space-xs w-full sm:w-auto px-space-lg py-3 rounded-xl bg-[#25D366] text-white font-label-lg text-label-lg shadow-md hover:opacity-90 transition-opacity" href="https://wa.me/233553258224" target="_blank" rel="noopener">
+      <span class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp: +233 55 325 8224</span>
+    </a>
+    <a class="inline-flex items-center justify-center gap-space-xs w-full sm:w-auto px-space-lg py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-colors" href="mailto:info@memorialplannerfuneralservices.com">
+      <span class="material-symbols-outlined text-[18px]">mail</span><span>info@memorialplannerfuneralservices.com</span>
+    </a>
+  </div>
+</div>
+
 <!-- Stepper -->
 <div class="flex items-center justify-between max-w-2xl mx-auto mb-space-xl px-space-sm" id="stepper">
   <div class="flex flex-col items-center flex-1 step-indicator" data-step="1">
@@ -225,6 +238,7 @@
   </div>
   <h2 class="font-headline-lg text-headline-lg text-primary font-bold mb-space-sm">One Last Step — Send Us Your Request</h2>
   <p class="font-body-lg text-body-lg text-secondary max-w-md mx-auto mb-space-md">Reference number <strong id="confirmation-ref" class="text-primary"></strong>. We've prepared a WhatsApp message with your arrangement details. Tap below to open WhatsApp and send it to our care team — we'll respond as soon as we receive it.</p>
+  <p class="font-caption text-caption text-secondary max-w-md mx-auto mb-space-md">Prefer email? Send the same details to <a class="text-primary font-semibold" id="confirmation-email" href="#">info@memorialplannerfuneralservices.com</a>.</p>
   <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md">
     <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-[#25D366] text-white font-label-lg text-label-lg hover:opacity-90 transition-all" id="confirmation-whatsapp" href="#" rel="noopener" target="_blank">
       <span class="material-symbols-outlined text-[18px]">chat</span><span>Send via WhatsApp</span>
@@ -344,10 +358,11 @@
   });
 
   var WHATSAPP_NUMBER = '233553258224';
+  var CARE_EMAIL = 'info@memorialplannerfuneralservices.com';
 
-  function buildWhatsAppMessage(ref){
+  function buildRequestLines(ref){
     var data = new FormData(form);
-    var lines = [
+    return [
       'New Arrangement Request — #' + ref,
       '',
       'Package: ' + (data.get('package') || '—'),
@@ -364,16 +379,18 @@
       'Email: ' + (data.get('email') || '—'),
       'Best Time to Call: ' + (data.get('bestTime') || '—')
     ];
-    return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
   }
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!validateStep(current)) return;
     var ref = 'ER-' + Math.random().toString(36).slice(2, 8).toUpperCase();
-    var waUrl = buildWhatsAppMessage(ref);
+    var lines = buildRequestLines(ref);
+    var waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+    var mailUrl = 'mailto:' + CARE_EMAIL + '?subject=' + encodeURIComponent('Arrangement Request #' + ref) + '&body=' + encodeURIComponent(lines.join('\n'));
     document.getElementById('confirmation-ref').textContent = '#' + ref;
     document.getElementById('confirmation-whatsapp').href = waUrl;
+    document.getElementById('confirmation-email').href = mailUrl;
     form.classList.add('hidden');
     document.getElementById('stepper').classList.add('hidden');
     document.getElementById('confirmation-panel').classList.remove('hidden');
