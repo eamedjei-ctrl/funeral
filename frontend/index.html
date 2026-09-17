@@ -46,6 +46,12 @@
     field.appendChild(petal);
   }
 
+  setTimeout(function(){
+    field.style.transition = 'opacity 1s ease-out';
+    field.style.opacity = '0';
+    setTimeout(function(){ field.remove(); }, 1000);
+  }, 10000);
+
   var crossField = document.getElementById('cross-field');
   var crossPositions = [
     {top:'10%', left:'6%'}, {top:'16%', left:'88%'}, {top:'38%', left:'14%'},
