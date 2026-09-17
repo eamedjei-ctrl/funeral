@@ -72,72 +72,27 @@
 
 
 <!-- WELCOME SPLASH: FALLING FLOWER CURTAIN -->
-<div class="fixed inset-0 z-[9999] bg-[#0a0a0a] flex flex-col items-center justify-center text-center px-6 transition-opacity duration-700 ease-in-out overflow-hidden" id="welcome-splash">
-  <div class="absolute inset-0 opacity-[0.06]" style="background-image:radial-gradient(circle at 20% 20%, #c8102e 0, transparent 40%), radial-gradient(circle at 80% 75%, #c8102e 0, transparent 40%);"></div>
-  <!-- Dense falling-flower curtain -->
-  <div class="absolute inset-0 pointer-events-none" id="splash-curtain"></div>
-  <!-- Reveal text -->
-  <div class="relative flex flex-col items-center gap-space-md max-w-lg opacity-0 transition-opacity duration-1000 ease-out" id="splash-reveal">
-    <svg class="w-10 h-16 text-[#c8102e]" fill="currentColor" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg"><rect height="140" rx="6" width="20" x="40"></rect><rect height="20" rx="6" width="80" x="10" y="35"></rect></svg>
-    <div class="flex items-center gap-2 mt-space-sm">
-      <svg class="w-6 h-6 text-white/40" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(0 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(60 50 50)" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(120 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(180 50 50)" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(240 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(300 50 50)" opacity="0.82"></path></svg>
-      <svg class="w-8 h-8 text-[#c8102e]" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(0 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(60 50 50)" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(120 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(180 50 50)" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(240 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(300 50 50)" opacity="0.82"></path></svg>
-      <svg class="w-6 h-6 text-white/40" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(0 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(60 50 50)" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(120 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(180 50 50)" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(240 50 50)"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(300 50 50)" opacity="0.82"></path></svg>
-    </div>
-    <h1 class="font-display-md text-display-md-mobile md:text-display-md text-white font-bold tracking-tight mt-space-sm leading-tight">
-      Welcome to <span class="text-[#c8102e] italic">Memorial Planner Funeral Services</span>
-    </h1>
-  </div>
+<div class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center text-center px-6 transition-opacity duration-700 ease-in-out" id="welcome-splash">
+  <h1 class="font-display-md text-display-md-mobile md:text-display-md text-black font-bold tracking-tight opacity-0 transition-opacity duration-1000 ease-out" id="splash-reveal">
+    Welcome
+  </h1>
 </div>
-<style>
-.splash-petal{position:absolute;top:-15vh;will-change:transform,opacity;animation-name:splash-petal-fall;animation-timing-function:cubic-bezier(.55,.05,.68,.53);animation-fill-mode:forwards;}
-@keyframes splash-petal-fall{
-  0%{transform:translateY(0) rotate(0deg);opacity:0;}
-  8%{opacity:1;}
-  100%{transform:translateY(135vh) rotate(320deg);opacity:1;}
-}
-@media (prefers-reduced-motion:reduce){.splash-petal{animation:none;display:none;}}
-</style>
 <script>
 (function(){
   var splash = document.getElementById('welcome-splash');
-  var curtain = document.getElementById('splash-curtain');
   var reveal = document.getElementById('splash-reveal');
   document.body.style.overflow = 'hidden';
 
-  var colors = ['#c8102e','#ffffff','#9a9a9a'];
-  var curtainCount = window.innerWidth < 640 ? 26 : 44;
-  for (var i = 0; i < curtainCount; i++) {
-    var petal = document.createElement('div');
-    petal.className = 'splash-petal';
-    var size = 20 + Math.random() * 26;
-    var left = (i / curtainCount) * 100 + (Math.random() * 4 - 2);
-    var duration = 1.1 + Math.random() * 0.9;
-    var delay = Math.random() * 0.5;
-    var color = colors[Math.floor(Math.random() * colors.length)];
-    petal.style.left = left + 'vw';
-    petal.style.width = size + 'px';
-    petal.style.height = size + 'px';
-    petal.style.animationDuration = duration + 's';
-    petal.style.animationDelay = delay + 's';
-    petal.style.filter = 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))';
-    petal.innerHTML = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(0 50 50)" fill="' + color + '"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(60 50 50)" fill="' + color + '" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(120 50 50)" fill="' + color + '"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(180 50 50)" fill="' + color + '" opacity="0.82"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(240 50 50)" fill="' + color + '"></path><path d="M50,50 C30,44 26,18 50,6 C74,18 70,44 50,50 Z" transform="rotate(300 50 50)" fill="' + color + '" opacity="0.82"></path><circle cx="50" cy="50" r="7" fill="#f0c14b"></circle><circle cx="50" cy="50" r="3" fill="#6b3f10"></circle></svg>';
-    curtain.appendChild(petal);
-  }
-
-  // Reveal the "You're Welcome" message once the curtain has fallen through.
-  setTimeout(function(){
+  requestAnimationFrame(function(){
     reveal.style.opacity = '1';
-    curtain.style.transition = 'opacity 1.1s ease-out';
-    curtain.style.opacity = '0.18';
-  }, 1500);
+  });
 
   function dismiss(){
     splash.style.opacity = '0';
     document.body.style.overflow = '';
     setTimeout(function(){ splash.remove(); }, 700);
   }
-  setTimeout(dismiss, 4800);
+  setTimeout(dismiss, 3000);
 })();
 </script>
 
