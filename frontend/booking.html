@@ -223,11 +223,16 @@
   <div class="w-16 h-16 rounded-full bg-tertiary-fixed/30 flex items-center justify-center text-tertiary-container mx-auto mb-space-md">
     <span class="material-symbols-outlined text-[32px]">volunteer_activism</span>
   </div>
-  <h2 class="font-headline-lg text-headline-lg text-primary font-bold mb-space-sm">Your Request Has Been Received</h2>
-  <p class="font-body-lg text-body-lg text-secondary max-w-md mx-auto mb-space-md">Thank you for trusting us in this moment. Reference number <strong id="confirmation-ref" class="text-primary"></strong>. A compassionate care director will call you within 2 hours.</p>
-  <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-all" href="index.html">
-    <span class="material-symbols-outlined text-[18px]">home</span><span>Return to Home</span>
-  </a>
+  <h2 class="font-headline-lg text-headline-lg text-primary font-bold mb-space-sm">One Last Step — Send Us Your Request</h2>
+  <p class="font-body-lg text-body-lg text-secondary max-w-md mx-auto mb-space-md">Reference number <strong id="confirmation-ref" class="text-primary"></strong>. We've prepared a WhatsApp message with your arrangement details. Tap below to open WhatsApp and send it to our care team — we'll respond as soon as we receive it.</p>
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md">
+    <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-[#25D366] text-white font-label-lg text-label-lg hover:opacity-90 transition-all" id="confirmation-whatsapp" href="#" rel="noopener" target="_blank">
+      <span class="material-symbols-outlined text-[18px]">chat</span><span>Send via WhatsApp</span>
+    </a>
+    <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-all" href="index.html">
+      <span class="material-symbols-outlined text-[18px]">home</span><span>Return to Home</span>
+    </a>
+  </div>
 </div>
 
 </div>
@@ -338,14 +343,41 @@
     showPanel(current);
   });
 
+  var WHATSAPP_NUMBER = '233553258224';
+
+  function buildWhatsAppMessage(ref){
+    var data = new FormData(form);
+    var lines = [
+      'New Arrangement Request — #' + ref,
+      '',
+      'Package: ' + (data.get('package') || '—'),
+      'Deceased: ' + (data.get('deceasedName') || '—'),
+      'Date of Passing: ' + (data.get('dateOfPassing') || '—'),
+      'Preferred Service Date: ' + (data.get('serviceDate') || 'Not specified'),
+      'Service Type: ' + (data.get('serviceType') || '—'),
+      'Location: ' + (data.get('location') || '—'),
+      'Special Requests: ' + (data.get('notes') || 'None'),
+      '',
+      'Contact Name: ' + (data.get('contactName') || '—'),
+      'Relationship: ' + (data.get('relationship') || '—'),
+      'Phone: ' + (data.get('phone') || '—'),
+      'Email: ' + (data.get('email') || '—'),
+      'Best Time to Call: ' + (data.get('bestTime') || '—')
+    ];
+    return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!validateStep(current)) return;
     var ref = 'ER-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+    var waUrl = buildWhatsAppMessage(ref);
     document.getElementById('confirmation-ref').textContent = '#' + ref;
+    document.getElementById('confirmation-whatsapp').href = waUrl;
     form.classList.add('hidden');
     document.getElementById('stepper').classList.add('hidden');
     document.getElementById('confirmation-panel').classList.remove('hidden');
+    window.open(waUrl, '_blank');
   });
 
   showPanel(current);
