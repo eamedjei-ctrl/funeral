@@ -218,14 +218,14 @@
   </div>
 
   <!-- Navigation -->
-  <div class="flex items-center justify-between mt-space-xl pt-space-md border-t border-outline-variant">
-    <button class="inline-flex items-center gap-space-xs px-space-md py-3 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" id="btn-back" type="button">
+  <div class="flex items-center gap-space-xs mt-space-xl pt-space-md border-t border-outline-variant">
+    <button class="inline-flex items-center justify-center gap-space-xs px-space-sm sm:px-space-md py-3 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors shrink-0" id="btn-back" type="button">
       <span class="material-symbols-outlined text-[18px]">arrow_back</span><span>Back</span>
     </button>
-    <button class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors" id="btn-next" type="button">
+    <button class="flex-1 sm:flex-none inline-flex items-center justify-center gap-space-xs px-space-sm sm:px-space-lg py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors ml-auto min-w-0" id="btn-next" type="button">
       <span>Continue</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span>
     </button>
-    <button class="hidden inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg shadow-md hover:bg-tertiary-fixed-dim transition-all" id="btn-submit" type="submit">
+    <button class="hidden flex-1 sm:flex-none inline-flex items-center justify-center gap-space-xs px-space-sm sm:px-space-lg py-3 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg shadow-md hover:bg-tertiary-fixed-dim transition-all ml-auto min-w-0" id="btn-submit" type="submit">
       <span class="material-symbols-outlined text-[18px]">check_circle</span><span>Submit Request</span>
     </button>
   </div>
@@ -425,6 +425,43 @@
   });
 
   showPanel(current);
+})();
+</script>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var style = document.createElement('style');
+  style.textContent =
+    '.reveal-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease-out,transform .7s cubic-bezier(.22,1,.36,1);}' +
+    '.reveal-up.is-visible{opacity:1;transform:translateY(0);}' +
+    '.hover-lift{transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;}' +
+    '.hover-lift:hover{transform:translateY(-4px);}' +
+    'a,button{transition-property:color,background-color,border-color,box-shadow,transform,opacity;transition-duration:.25s;}';
+  document.head.appendChild(style);
+  if (reduceMotion) return;
+
+  document.querySelectorAll('#booking-form, #stepper, .max-w-2xl.mx-auto').forEach(function(s){
+    s.classList.add('reveal-up');
+  });
+
+  document.querySelectorAll('.grid > *').forEach(function(el, i){
+    el.classList.add('reveal-up');
+    el.style.transitionDelay = (Math.min(i % 6, 6) * 80) + 'ms';
+  });
+
+  document.querySelectorAll('.package-card').forEach(function(c){ c.classList.add('hover-lift'); });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal-up').forEach(function(el){ observer.observe(el); });
 })();
 </script>
 
