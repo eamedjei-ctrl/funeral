@@ -72,27 +72,70 @@
 
 
 <!-- WELCOME SPLASH: FALLING FLOWER CURTAIN -->
-<div class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center text-center px-6 transition-opacity duration-700 ease-in-out" id="welcome-splash">
-  <h1 class="font-display-md text-display-md-mobile md:text-display-md text-black font-bold tracking-tight opacity-0 transition-opacity duration-1000 ease-out" id="splash-reveal">
-    Welcome
-  </h1>
+<div class="fixed inset-0 z-[9999] bg-white flex flex-col items-center justify-center text-center px-6 overflow-hidden transition-opacity duration-700 ease-in-out" id="welcome-splash">
+  <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(circle at 50% 40%, rgba(200,16,46,0.06) 0%, transparent 55%);"></div>
+  <div class="absolute inset-0 pointer-events-none" id="splash-sparks"></div>
+  <div class="relative flex flex-col items-center gap-space-sm max-w-xl">
+    <svg class="w-9 h-14 text-[#c8102e] opacity-0" id="splash-cross" fill="currentColor" style="transform:translateY(14px) scale(0.85);transition:opacity 0.9s ease-out, transform 0.9s cubic-bezier(.22,1,.36,1);" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg"><rect height="140" rx="6" width="20" x="40"></rect><rect height="20" rx="6" width="80" x="10" y="35"></rect></svg>
+    <span class="font-label-md text-label-md tracking-[0.35em] uppercase text-secondary opacity-0" id="splash-kicker" style="transition:opacity 0.8s ease-out, transform 0.8s cubic-bezier(.22,1,.36,1);transform:translateY(10px);">Welcome to</span>
+    <h1 class="font-display-md text-display-md-mobile md:text-display-md text-primary font-bold tracking-tight leading-tight opacity-0" id="splash-title" style="transition:opacity 1s ease-out, transform 1s cubic-bezier(.22,1,.36,1);transform:translateY(16px);">
+      Memorial Planner <span class="text-[#c8102e] italic">Funeral Services</span>
+    </h1>
+    <div class="h-[2px] w-0 bg-[#c8102e] mt-space-sm" id="splash-rule" style="transition:width 0.9s cubic-bezier(.22,1,.36,1) 0.3s;"></div>
+    <p class="font-caption text-caption tracking-[0.2em] uppercase text-secondary/70 opacity-0" id="splash-tagline" style="transition:opacity 0.8s ease-out, transform 0.8s cubic-bezier(.22,1,.36,1);transform:translateY(8px);">Dignity for the Departed</p>
+  </div>
 </div>
+<style>
+.splash-spark{position:absolute;bottom:-6vh;border-radius:9999px;background:#c8102e;opacity:0;will-change:transform,opacity;animation-name:splash-spark-rise;animation-timing-function:ease-out;animation-fill-mode:forwards;}
+@keyframes splash-spark-rise{
+  0%{transform:translateY(0) scale(0.6);opacity:0;}
+  12%{opacity:0.55;}
+  100%{transform:translateY(-70vh) scale(1);opacity:0;}
+}
+@media (prefers-reduced-motion:reduce){.splash-spark{animation:none;display:none;}}
+</style>
 <script>
 (function(){
   var splash = document.getElementById('welcome-splash');
-  var reveal = document.getElementById('splash-reveal');
+  var cross = document.getElementById('splash-cross');
+  var kicker = document.getElementById('splash-kicker');
+  var title = document.getElementById('splash-title');
+  var rule = document.getElementById('splash-rule');
+  var tagline = document.getElementById('splash-tagline');
+  var sparksEl = document.getElementById('splash-sparks');
   document.body.style.overflow = 'hidden';
 
-  requestAnimationFrame(function(){
-    reveal.style.opacity = '1';
-  });
+  var sparkCount = window.innerWidth < 640 ? 10 : 18;
+  for (var i = 0; i < sparkCount; i++) {
+    var spark = document.createElement('div');
+    spark.className = 'splash-spark';
+    var size = 3 + Math.random() * 5;
+    spark.style.left = (Math.random() * 100) + 'vw';
+    spark.style.width = size + 'px';
+    spark.style.height = size + 'px';
+    spark.style.animationDuration = (3 + Math.random() * 2) + 's';
+    spark.style.animationDelay = (Math.random() * 2.5) + 's';
+    sparksEl.appendChild(spark);
+  }
+
+  function show(el, delay){
+    setTimeout(function(){
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, delay);
+  }
+  show(cross, 150);
+  show(kicker, 550);
+  show(title, 800);
+  setTimeout(function(){ rule.style.width = '96px'; }, 1300);
+  show(tagline, 1500);
 
   function dismiss(){
     splash.style.opacity = '0';
     document.body.style.overflow = '';
     setTimeout(function(){ splash.remove(); }, 700);
   }
-  setTimeout(dismiss, 3000);
+  setTimeout(dismiss, 3600);
 })();
 </script>
 
