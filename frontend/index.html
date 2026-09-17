@@ -87,9 +87,6 @@
     <h1 class="font-display-md text-display-md-mobile md:text-display-md text-white font-bold tracking-tight mt-space-sm leading-tight">
       Welcome to <span class="text-[#c8102e] italic">Memorial Planner Funeral Services</span>
     </h1>
-    <button class="mt-space-lg inline-flex items-center gap-space-xs border border-[#c8102e] text-white px-space-lg py-2.5 rounded-full font-label-lg text-label-lg hover:bg-[#c8102e] transition-all" id="splash-enter" type="button">
-      Enter Site
-    </button>
   </div>
 </div>
 <style>
@@ -106,7 +103,6 @@
   var splash = document.getElementById('welcome-splash');
   var curtain = document.getElementById('splash-curtain');
   var reveal = document.getElementById('splash-reveal');
-  var enter = document.getElementById('splash-enter');
   document.body.style.overflow = 'hidden';
 
   var colors = ['#c8102e','#ffffff','#9a9a9a'];
@@ -141,7 +137,6 @@
     document.body.style.overflow = '';
     setTimeout(function(){ splash.remove(); }, 700);
   }
-  enter.addEventListener('click', dismiss);
   setTimeout(dismiss, 4800);
 })();
 </script>
