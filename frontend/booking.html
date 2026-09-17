@@ -238,7 +238,8 @@
   </div>
   <h2 class="font-headline-lg text-headline-lg text-primary font-bold mb-space-sm">One Last Step — Send Us Your Request</h2>
   <p class="font-body-lg text-body-lg text-secondary max-w-md mx-auto mb-space-md">Reference number <strong id="confirmation-ref" class="text-primary"></strong>. We've prepared a WhatsApp message with your arrangement details. Tap below to open WhatsApp and send it to our care team — we'll respond as soon as we receive it.</p>
-  <p class="font-caption text-caption text-secondary max-w-md mx-auto mb-space-md">Prefer email? Send the same details to <a class="text-primary font-semibold" id="confirmation-email" href="#">info@memorialplannerfuneralservices.com</a>.</p>
+  <p class="font-caption text-caption text-secondary max-w-md mx-auto mb-space-md" id="confirmation-email-status">A copy has also been emailed to our care team.</p>
+  <p class="font-caption text-caption text-secondary max-w-md mx-auto mb-space-md">Prefer to email us yourself? Send the same details to <a class="text-primary font-semibold" id="confirmation-email" href="#">info@memorialplannerfuneralservices.com</a>.</p>
   <div class="flex flex-col sm:flex-row items-center justify-center gap-space-md">
     <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-[#25D366] text-white font-label-lg text-label-lg hover:opacity-90 transition-all" id="confirmation-whatsapp" href="#" rel="noopener" target="_blank">
       <span class="material-symbols-outlined text-[18px]">chat</span><span>Send via WhatsApp</span>
@@ -359,6 +360,9 @@
 
   var WHATSAPP_NUMBER = '233553258224';
   var CARE_EMAIL = 'info@memorialplannerfuneralservices.com';
+  // Create a form at https://formspree.io (free tier), point it at CARE_EMAIL,
+  // and paste its endpoint below to enable automatic email delivery.
+  var FORMSPREE_ENDPOINT = '';
 
   function buildRequestLines(ref){
     var data = new FormData(form);
@@ -381,6 +385,28 @@
     ];
   }
 
+  function sendRequestEmail(ref, lines){
+    var statusEl = document.getElementById('confirmation-email-status');
+    if (!FORMSPREE_ENDPOINT) {
+      if (statusEl) statusEl.textContent = '';
+      return;
+    }
+    if (statusEl) statusEl.textContent = 'Sending a copy to our care team…';
+    var data = new FormData(form);
+    data.set('_subject', 'Arrangement Request #' + ref);
+    data.set('reference', ref);
+    data.set('message', lines.join('\n'));
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    }).then(function(res){
+      if (statusEl) statusEl.textContent = res.ok ? 'Emailed to our care team.' : 'Could not confirm the email sent — please use the link below as backup.';
+    }).catch(function(){
+      if (statusEl) statusEl.textContent = 'Could not confirm the email sent — please use the link below as backup.';
+    });
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!validateStep(current)) return;
@@ -395,6 +421,7 @@
     document.getElementById('stepper').classList.add('hidden');
     document.getElementById('confirmation-panel').classList.remove('hidden');
     window.open(waUrl, '_blank');
+    sendRequestEmail(ref, lines);
   });
 
   showPanel(current);
