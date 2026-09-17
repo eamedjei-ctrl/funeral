@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-high":"#dee9fc","primary-fixed-dim":"#aec8f4","primary-fixed":"#d5e3ff","tertiary-container":"#4b3601","primary":"#032448","surface-dim":"#d0dbed","on-background":"#121c2a","on-primary-fixed-variant":"#2d476d","error":"#ba1a1a","inverse-on-surface":"#eaf1ff","surface-container":"#e6eeff","secondary-container":"#dce2f3","surface-container-low":"#eff4ff","on-surface":"#121c2a","on-primary":"#ffffff","surface-variant":"#d9e3f6","surface-tint":"#465f86","on-secondary":"#ffffff","on-secondary-container":"#5e6572","background":"#f8f9ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","inverse-primary":"#aec8f4","tertiary-fixed-dim":"#e3c281","secondary":"#585f6c","on-tertiary-container":"#be9f61","on-error-container":"#93000a","tertiary":"#302200","outline":"#74777f","on-secondary-fixed":"#151c27","on-tertiary":"#ffffff","secondary-fixed":"#dce2f3","on-secondary-fixed-variant":"#404754","on-error":"#ffffff","on-primary-fixed":"#001c3b","on-tertiary-fixed-variant":"#5a430e","outline-variant":"#c4c6cf","secondary-fixed-dim":"#c0c7d6","surface-container-highest":"#d9e3f6","on-surface-variant":"#43474e","surface":"#f8f9ff","on-primary-container":"#8ba4cf","primary-container":"#1f3a5f","inverse-surface":"#27313f","surface-bright":"#f8f9ff","tertiary-fixed":"#ffdf9f","on-tertiary-fixed":"#261a00"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"3rem","space-xl":"3.5rem","space-lg":"2rem","space-md":"1.25rem","gutter":"1.5rem","margin-mobile":"1.25rem","space-xs":"0.375rem","gutter-mobile":"1rem","space-sm":"0.75rem"},"fontFamily":{"display-md-mobile":["Playfair Display"],"label-lg":["Inter"],"body-xl":["Inter"],"label-md":["Inter"],"headline-md":["Playfair Display"],"display-md":["Playfair Display"],"headline-lg":["Playfair Display"],"caption":["Inter"],"headline-sm":["Playfair Display"],"display-lg":["Playfair Display"],"body-lg":["Inter"],"display-lg-mobile":["Playfair Display"],"body-md":["Inter"]},"fontSize":{"display-md-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.03em","fontWeight":"600"}],"body-xl":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"500"}],"display-md":["44px",{"lineHeight":"54px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"500"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"display-lg":["56px",{"lineHeight":"68px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed"><header class="fixed top-0 left-0 right-0 z-50"><div class="bg-primary text-on-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1200px] mx-auto px-margin flex items-center justify-between h-10 font-label-md text-label-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-xs text-tertiary-fixed hover:text-tertiary-fixed-dim transition-colors" href="tel:18005557378"><span class="material-symbols-outlined text-[16px]">phone_in_talk</span><span class="font-label-md text-label-md tracking-wider">Immediate Need 24/7: 1-800-555-REST</span></a><div class="hidden lg:flex items-center gap-space-xs text-on-primary-container"><span class="material-symbols-outlined text-[15px]">location_on</span><span>Serving Greater Metropolitan &amp; Surrounding Communities</span></div></div><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center gap-space-xs text-primary-fixed hover:text-on-primary transition-colors" data-path="contact" href="#"><span class="material-symbols-outlined text-[15px]">support_agent</span><span>Compassionate Guidance</span></a><div class="flex items-center gap-space-xs text-primary-fixed-dim cursor-pointer"><span class="material-symbols-outlined text-[16px]">light_mode</span><span class="hidden md:inline font-caption text-caption">Serene Mode</span></div></div></div></div><div class="bg-surface/90 backdrop-blur-xl shadow-[0_10px_30px_-5px_rgba(31,58,95,0.05),0_4px_12px_-2px_rgba(200,169,106,0.04)]"><div class="h-20 max-w-[1200px] mx-auto px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Eternal Rest Funeral Services Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgpH9l7DaTDnh0yKsyhq9YrP81ITFqAiljXGvb4Knz1PUbQvMOhDoz7pf7vOUjW5loMGHyD_KhN5xwCsq4e7EiUYwR4HqZ5fI98JtZU4uz6VeFnoP8zka9HovZJo9bHb0isI4cDv2fhUgt_i0JD5s52Al66Yjcw4coyTpCBxrakq6tulfMeeNWAPROWb-scOv6VU0QJ-NPnY1QN__r6BHcUml0VXZSC9mIANqy2xxoKgd1bqZWeqSAxPBH"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Eternal Rest</span><span class="font-caption text-caption tracking-widest uppercase text-secondary">Funeral &amp; Cremation Care</span></div></div><nav class="hidden xl:flex items-center gap-space-md h-full" data-active-classes="text-tertiary-container font-semibold border-b-2 border-tertiary-fixed-dim"><a aria-current="page" class="h-full inline-flex items-center transition-colors pb-0.5 text-tertiary-container font-semibold border-b-2 border-tertiary-fixed-dim" data-path="home" href="#">Home</a><a class="h-full inline-flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pb-0.5" data-path="about-us" href="#">About Us</a><a class="h-full inline-flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pb-0.5" data-path="services" href="#">Services</a><a class="h-full inline-flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pb-0.5" data-path="funeral-packages" href="#">Funeral Packages</a><a class="h-full inline-flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pb-0.5" data-path="obituaries" href="#">Obituaries</a><a class="h-full inline-flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pb-0.5" data-path="gallery" href="#">Gallery</a><a class="h-full inline-flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pb-0.5" data-path="faq" href="#">FAQ</a><a class="h-full inline-flex items-center font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors pb-0.5" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><a class="hidden md:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg shadow-[0_4px_16px_rgba(200,169,106,0.25)] hover:bg-tertiary-fixed-dim transition-all" data-path="arrangements-booking" href="#">Book Now</a><a class="flex items-center gap-space-xs pl-space-sm pr-space-xs py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors" data-path="family-portal" href="#"><span class="hidden sm:inline font-label-md text-label-md text-on-surface-variant">Family Portal</span><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqRcrYa4WodNgIuYPtnbjO5Y4LwdpE2qP52y5mKbmfpsiYde9d3vUJRLb2E7m7_COoPwgqDsbkM0qNQGIQU0WBFJYM4s79NXHS0z7Vuq-L82MUuADmYKo5eo3T7bn2ElqEsHVeFdfzyByrsS_s7kxrOGbJpFVt6JeU6Y9ecQaNfkm57GEXQAZ4EXZNIjzRDJxcVKeKLxBUVr4UjMMVXf7kmJb8bloOed2Bqfl-7435JxjL94dVWNS8-w"/></a></div></div></div></header><main class="w-full pt-[120px] bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full -mt-[120px] pt-[120px] min-h-[92vh] flex items-center justify-center overflow-hidden">
+<!-- Hero Background Image with tranquil natural sanctuary -->
+<div class="absolute inset-0 z-0">
+<img alt="Serene mist-covered lake with water lilies and traditional sanctuary chapel pavilion at sunrise" class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvbzgU327r82xO-m5oIRD18HaA6m_U_AFrDsQW3WF85SvU8VI9g7XYDV1Z9q_kbVZsZ2E0-ncZS5fzXhbubsiN9guGr_5YkAwvR51EnIf2L9I8RFPDzeaSUI-aVDniZcmlPx7ExY-9Z2BG2eIkn5UOthjsbIZgfaGUbhEJby8Pexf5XHMTYifeVqMVeYEfE24jQX3JlULdRHHEtmi0fbCddoHKSnMqA63xk0VU14CCzhxmiUGP5BDq5Q"/>
+<!-- Sophisticated Multi-layer Gradient Scrim for profound warmth and text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/45"></div>
+<div class="absolute inset-0 bg-radial from-transparent via-primary/40 to-primary/80"></div>
+</div>
+<!-- Hero Content Container -->
+<div class="relative z-10 max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col items-center text-center text-on-primary">
+<!-- Subtle Golden Crest Label -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-lowest/10 backdrop-blur-md text-tertiary-fixed text-label-md font-label-md tracking-wider uppercase shadow-sm mb-space-md animate-fade-in">
+<span class="material-symbols-outlined text-[16px]">all_inclusive</span>
+<span>Trusted Care Since 1989</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-display-md-mobile md:text-display-lg font-bold text-surface-bright max-w-4xl tracking-tight leading-tight md:leading-[1.15] mb-space-md">
+        Honoring Every Life with <span class="italic font-normal text-tertiary-fixed font-headline-lg">Dignity</span> and <span class="italic font-normal text-tertiary-fixed font-headline-lg">Compassion</span>
+</h1>
+<!-- Supporting Paragraph -->
+<p class="font-body-xl text-body-lg md:text-body-xl text-primary-fixed-dim max-w-2xl font-light leading-relaxed mb-space-lg">
+        In life's most sensitive moments, we provide thoughtful guidance, personalized memorial arrangements, and unwavering support to honor your loved one's unique legacy with the highest reverence.
+      </p>
+<!-- Dual Call-to-Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md w-full sm:w-auto mb-space-xl">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg shadow-lg hover:bg-tertiary-fixed-dim hover:shadow-xl transition-all duration-300" data-path="arrangements-booking" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span>Book a Funeral</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-surface-container-lowest/15 backdrop-blur-md text-surface-bright font-label-lg text-label-lg hover:bg-surface-container-lowest/25 shadow-sm transition-all duration-300" href="#packages-section">
+<span class="material-symbols-outlined text-[20px]">view_agenda</span>
+<span>View Packages</span>
+</a>
+</div>
+<!-- 24/7 Immediate Support Trust Ribbon -->
+<div class="w-full max-w-xl rounded-xl bg-surface-container-lowest/10 backdrop-blur-md px-space-md py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-xs shadow-md">
+<div class="flex items-center gap-space-xs text-primary-fixed">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-body-md text-body-md text-surface-bright">Need urgent support right now?</span>
+</div>
+<a class="inline-flex items-center gap-space-xs text-tertiary-fixed hover:text-tertiary-fixed-dim font-label-lg text-label-lg transition-colors" href="tel:18005557378">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call 1-800-555-REST (24/7)</span>
+</a>
+</div>
+</div>
+</section>
+<!-- KEY METRICS & REPUTATION BAR -->
+<section class="w-full bg-primary text-on-primary shadow-xl relative z-20">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-lg">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md md:gap-space-lg text-center">
+<div class="flex flex-col items-center justify-center p-space-sm">
+<span class="font-display-md text-display-md text-tertiary-fixed tracking-tight">35+</span>
+<span class="font-label-lg text-label-lg text-primary-fixed-dim mt-1">Years of Compassionate Service</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-sm">
+<span class="font-display-md text-display-md text-tertiary-fixed tracking-tight">12,400+</span>
+<span class="font-label-lg text-label-lg text-primary-fixed-dim mt-1">Families Lovingly Served</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-sm">
+<span class="font-display-md text-display-md text-tertiary-fixed tracking-tight">4</span>
+<span class="font-label-lg text-label-lg text-primary-fixed-dim mt-1">Peaceful Sanctuary Locations</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-sm">
+<span class="font-display-md text-display-md text-tertiary-fixed tracking-tight">65+</span>
+<span class="font-label-lg text-label-lg text-primary-fixed-dim mt-1">Licensed Care Specialists</span>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPANY INTRODUCTION & HERITAGE -->
+<section class="w-full py-space-xl bg-background">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left: Editorial Content -->
+<div class="lg:col-span-6 flex flex-col items-start">
+<span class="font-label-md text-label-md tracking-widest uppercase text-tertiary-container bg-tertiary-fixed/30 px-3 py-1 rounded-full mb-space-sm">Our Calling &amp; Heritage</span>
+<h2 class="font-headline-lg text-headline-lg md:text-display-md text-primary font-bold tracking-tight mb-space-md">
+            A Tradition of Reverence &amp; Heartfelt Care
+          </h2>
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed mb-space-md">
+            For more than three decades, Eternal Rest has been the trusted sanctuary for families during life’s most profound transitions. We believe every farewell should be as individual and extraordinary as the soul it commemorates.
+          </p>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-space-lg">
+            From intimate private services in our serene garden courtyards to grand commemorative processions with full honors, our experienced directors manage every detail with precision, tenderness, and grace.
+          </p>
+<!-- Core Values Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md w-full">
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">diversity_1</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Compassionate Directors</h4>
+<p class="font-caption text-caption text-secondary mt-0.5">Gentle, 24/7 personal care guides for your family.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">price_check</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Transparent Pricing</h4>
+<p class="font-caption text-caption text-secondary mt-0.5">Honest itemization with no unexpected expenses.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">church</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Multi-Faith Honors</h4>
+<p class="font-caption text-caption text-secondary mt-0.5">Full cultural, secular, and religious custom respects.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">park</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Private Sanctuaries</h4>
+<p class="font-caption text-caption text-secondary mt-0.5">Quiet reflection chapels and manicured memorial gardens.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Dignified Visual Composition -->
+<div class="lg:col-span-6 relative flex justify-center">
+<div class="relative w-full max-w-lg">
+<div class="w-full h-[460px] rounded-2xl overflow-hidden shadow-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Warm sunlight filtering through stained glass windows of a peaceful, elegant memorial chapel with soft velvet seating and pristine white floral tributes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUNT95DhH9BsxPJliiHKCQkes2LQs7PCI87-zfhUEpIc09eqhxbqxYSUtJFUnq27B9IWTxiLYHUPzKzW8ZNTmIkg42J2x4cEaOSAW6qUX4oAnSZPQHH3xM7FPvIlLia5b71qnPVcNYarFINzWdDmonPC81U34b8YrrQ8avVk5KWUz3e_11Fa0AMpYjQXrDPd8K_UTdXYLyepdSfpqQGkTZdOpCnxJ28011xmH3vXgGUR2ZZiCK4YjsRg"/>
+</div>
+<!-- Overlapping Floating Tribute Card -->
+<div class="absolute -bottom-6 -left-4 sm:-left-8 bg-surface-container-lowest p-space-md rounded-xl shadow-xl max-w-xs flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed/40 flex items-center justify-center text-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">100% Assurance</div>
+<p class="font-caption text-caption text-secondary">Every family receives our unwavering sacred pledge of care.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED FUNERAL PACKAGES SECTION -->
+<section class="w-full py-space-xl bg-surface-container-low relative" id="packages-section">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md tracking-widest uppercase text-tertiary-container bg-tertiary-fixed/30 px-3 py-1 rounded-full">Transparent Pricing</span>
+<h2 class="font-headline-lg text-headline-lg md:text-display-md text-primary font-bold tracking-tight mt-space-xs mb-space-xs">
+          Thoughtfully Curated Funeral Packages
+        </h2>
+<p class="font-body-lg text-body-lg text-secondary">
+          Transparent, honorable packages designed to provide peace of mind without hidden burdens during an already tender time.
+        </p>
+</div>
+<!-- 4 Tier Pricing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md items-stretch">
+<!-- Tier 1: Basic Package -->
+<div class="flex flex-col justify-between p-space-md rounded-2xl bg-surface-container-lowest shadow-md hover:shadow-xl transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Basic Farewell</h3>
+<span class="material-symbols-outlined text-secondary text-[20px]">eco</span>
+</div>
+<p class="font-caption text-caption text-secondary mb-space-md">Essential dignified care and private direct committal.</p>
+<div class="mb-space-md">
+<span class="font-display-md text-display-md text-primary font-bold">$2,450</span>
+<span class="font-caption text-caption text-secondary block mt-0.5">Complete standard package</span>
+</div>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface mb-space-lg">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Immediate 24/7 care transfer</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Dignified basic preparation</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Simple private farewell room</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>All legal &amp; death certifications</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Digital tribute obituary</span>
+</li>
+</ul>
+</div>
+<a class="w-full text-center py-2.5 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" data-path="arrangements-booking" href="#">
+            Select Basic
+          </a>
+</div>
+<!-- Tier 2: Standard Package -->
+<div class="flex flex-col justify-between p-space-md rounded-2xl bg-surface-container-lowest shadow-md hover:shadow-xl transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Standard Honor</h3>
+<span class="material-symbols-outlined text-secondary text-[20px]">groups</span>
+</div>
+<p class="font-caption text-caption text-secondary mb-space-md">Traditional gathering with chapel service &amp; hearse.</p>
+<div class="mb-space-md">
+<span class="font-display-md text-display-md text-primary font-bold">$4,850</span>
+<span class="font-caption text-caption text-secondary block mt-0.5">Complete family service</span>
+</div>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface mb-space-lg">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Includes all Basic offerings</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Full visitation &amp; viewing ceremony</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Professional embalming &amp; styling</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Ceremonial hearse coach</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Floral tribute &amp; registry book</span>
+</li>
+</ul>
+</div>
+<a class="w-full text-center py-2.5 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" data-path="arrangements-booking" href="#">
+            Select Standard
+          </a>
+</div>
+<!-- Tier 3: Premium Package (FEATURED) -->
+<div class="flex flex-col justify-between p-space-md rounded-2xl bg-primary text-on-primary shadow-2xl relative transform lg:-translate-y-2">
+<!-- Featured Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wider font-bold shadow-md">
+            Most Selected
+          </div>
+<div>
+<div class="flex items-center justify-between mb-space-xs mt-2">
+<h3 class="font-headline-sm text-headline-sm text-surface-bright font-bold">Premium Legacy</h3>
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-caption text-caption text-primary-fixed-dim mb-space-md">Complete comprehensive multi-day commemoration.</p>
+<div class="mb-space-md">
+<span class="font-display-md text-display-md text-tertiary-fixed font-bold">$7,950</span>
+<span class="font-caption text-caption text-primary-fixed-dim block mt-0.5">All-inclusive memorial</span>
+</div>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-primary-fixed mb-space-lg">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px] mt-0.5">verified</span>
+<span>Extended multi-day visitation</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px] mt-0.5">verified</span>
+<span>Custom luxury casket selection</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px] mt-0.5">verified</span>
+<span>Bespoke floral arrangements</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px] mt-0.5">verified</span>
+<span>Video memorial montage creation</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px] mt-0.5">verified</span>
+<span>Full catering reception lounge</span>
+</li>
+</ul>
+</div>
+<a class="w-full text-center py-2.5 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg shadow-md hover:bg-tertiary-fixed-dim transition-all" data-path="arrangements-booking" href="#">
+            Book Premium
+          </a>
+</div>
+<!-- Tier 4: VIP Heritage Package -->
+<div class="flex flex-col justify-between p-space-md rounded-2xl bg-surface-container-lowest shadow-md hover:shadow-xl transition-all duration-300">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">VIP Heritage</h3>
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">diamond</span>
+</div>
+<p class="font-caption text-caption text-secondary mb-space-md">Uncompromising reverence, dedicated concierge &amp; 4K broadcast.</p>
+<div class="mb-space-md">
+<span class="font-display-md text-display-md text-primary font-bold">$12,500</span>
+<span class="font-caption text-caption text-secondary block mt-0.5">Bespoke monumental tribute</span>
+</div>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface mb-space-lg">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Exclusive Master Chapel reservation</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Premium bronze or hardwood casket</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>4K Multi-cam global live broadcast</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Symbolic white dove release</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] mt-0.5">check_circle</span>
+<span>Dedicated Family Concierge Director</span>
+</li>
+</ul>
+</div>
+<a class="w-full text-center py-2.5 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" data-path="arrangements-booking" href="#">
+            Select VIP Heritage
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES OVERVIEW GRID -->
+<section class="w-full py-space-xl bg-background">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+<div class="max-w-xl">
+<span class="font-label-md text-label-md tracking-widest uppercase text-tertiary-container bg-tertiary-fixed/30 px-3 py-1 rounded-full">Our Core Offerings</span>
+<h2 class="font-headline-lg text-headline-lg md:text-display-md text-primary font-bold tracking-tight mt-space-xs">
+            Comprehensive Services Tailored to Your Wishes
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-md mt-space-sm md:mt-0">
+          Whether you require immediate arrangements or are planning thoughtfully in advance, our dedicated staff provides end-to-end guidance.
+        </p>
+</div>
+<!-- 10 Comprehensive Service Cards Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- 1. Funeral Planning -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Funeral Planning</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Step-by-step guidance navigating ceremonies, legal certificates, and memorial orders.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 2. Burial Services -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">yard</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Burial Services</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Traditional graveside services, mausoleum crypts, and consecrated ground interments.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3. Cremation Services -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Cremation Services</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Private on-site crematory with respectful witness viewing and personalized urn selections.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 4. Transportation & Hearse Rental -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Hearse &amp; Fleet</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Dignified Cadillac coaches, family limousines, and dedicated police escort escorts.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 5. Floral Arrangements -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">filter_vintage</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Floral Tributes</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Bespoke casket sprays, standing wreaths, and custom botanical arrangements.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 6. Memorial Programs & Keepsakes -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">book_2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Memorial Programs</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Custom foil-stamped prayer cards, embossed service books, and fingerprint jewelry.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 7. Compassionate Catering -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">restaurant</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Reception Catering</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Comforting post-service receptions hosted in our tranquil banqueting suites.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 8. Global Live Streaming -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Live Streaming</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Encrypted, multi-camera broadcast allowing remote friends and relatives to unite.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 9. Grief Counseling & Family Aftercare -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">volunteer_activism</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Family Aftercare</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Complimentary grief support circles, licensed counselor referrals, and check-ins.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="grief-support" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- 10. Legal & Veteran Assistance -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">military_tech</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-space-xs">Veteran Honors</h3>
+<p class="font-caption text-caption text-secondary leading-relaxed">
+              Handling VA documentation, flag presentation, taps ceremonies, and honors.
+            </p>
+</div>
+<a class="mt-space-md inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container hover:underline" data-path="services" href="#">
+<span>Learn more</span> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE MULTI-STEP BOOKING PREVIEW BANNER -->
+<section class="w-full py-space-xl bg-surface-container">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl shadow-xl">
+<div class="text-center max-w-xl mx-auto mb-space-lg">
+<span class="font-label-md text-label-md tracking-widest uppercase text-tertiary-container bg-tertiary-fixed/30 px-3 py-1 rounded-full">Gentle Arrangements</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold mt-space-xs">
+            Plan with Simplicity &amp; Complete Clarity
+          </h2>
+<p class="font-body-md text-body-md text-secondary mt-space-xs">
+            Our self-paced online arrangement portal lets you explore options from the comfort of your home, or pause anytime to speak with our directors.
+          </p>
+</div>
+<!-- Progress Track Stepper -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative mb-space-lg">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center mb-space-xs shadow">1</div>
+<span class="font-label-lg text-label-lg text-primary font-semibold">Service Selection</span>
+<span class="font-caption text-caption text-secondary mt-0.5">Burial, cremation, or chapel service</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center mb-space-xs">2</div>
+<span class="font-label-lg text-label-lg text-primary font-semibold">Date &amp; Sanctuary</span>
+<span class="font-caption text-caption text-secondary mt-0.5">Choose preferred venue &amp; timing</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center mb-space-xs">3</div>
+<span class="font-label-lg text-label-lg text-primary font-semibold">Personalization</span>
+<span class="font-caption text-caption text-secondary mt-0.5">Music, florals, catering &amp; tributes</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center mb-space-xs">4</div>
+<span class="font-label-lg text-label-lg text-primary font-semibold">Care Confirmation</span>
+<span class="font-caption text-caption text-secondary mt-0.5">Transparent summary &amp; director lock</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all" data-path="arrangements-booking" href="#">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+<span>Begin Guided Arrangement</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-all" data-path="contact" href="#">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Consult Care Director</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- HEARTFELT FAMILY TESTIMONIALS -->
+<section class="w-full py-space-xl bg-background">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin">
+<div class="text-center max-w-xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md tracking-widest uppercase text-tertiary-container bg-tertiary-fixed/30 px-3 py-1 rounded-full">Words of Comfort</span>
+<h2 class="font-headline-lg text-headline-lg md:text-display-md text-primary font-bold tracking-tight mt-space-xs">
+          Families Lovingly Supported
+        </h2>
+<p class="font-body-md text-body-md text-secondary mt-space-xs">
+          Reflections from those who trusted us with their beloved family members.
+        </p>
+</div>
+<!-- Testimonials Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Review 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-tertiary-fixed-dim mb-space-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed mb-space-md">
+              "During the most heartbreaking week of our lives, the staff at Eternal Rest treated our mother like their own family. The chapel was breathtaking and peaceful, relieving all the burden from our shoulders."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">
+              EC
+            </div>
+<div>
+<span class="font-label-lg text-label-lg text-primary block">Eleanor &amp; David Chen</span>
+<span class="font-caption text-caption text-secondary">Memorial Service for Mother</span>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-tertiary-fixed-dim mb-space-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed mb-space-md">
+              "The live streaming allowed our overseas relatives across Europe and Australia to be present seamlessly. Complete financial transparency with no pressured upsells. Eternal Rest restored our peace."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">
+              MR
+            </div>
+<div>
+<span class="font-label-lg text-label-lg text-primary block">Marcus &amp; Sarah Ross</span>
+<span class="font-caption text-caption text-secondary">VIP Heritage Memorial</span>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-tertiary-fixed-dim mb-space-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed mb-space-md">
+              "Their aftercare and grief support resources made an overwhelming transition bearable. Director Robert helped us coordinate the military honors ceremony with absolute perfection."
+            </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-primary">
+              GH
+            </div>
+<div>
+<span class="font-label-lg text-label-lg text-primary block">Col. George Hamilton (Ret.)</span>
+<span class="font-caption text-caption text-secondary">Veteran Memorial Honors</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- IMMERSIVE CALL-TO-ACTION BANNER -->
+<section class="w-full py-space-xl bg-primary text-on-primary relative overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin relative z-10">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-space-lg text-center lg:text-left">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 text-tertiary-fixed font-label-md text-label-md tracking-wider uppercase mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Always Standing By</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg md:text-display-md text-surface-bright font-bold tracking-tight mb-space-xs">
+            We Are Here for You, Every Step of the Way
+          </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim">
+            Whether you need immediate assistance or are thoughtfully planning ahead, our dedicated funeral directors are ready to serve with dignity, patience, and warmth.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md shrink-0 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg shadow-lg hover:bg-tertiary-fixed-dim transition-all" data-path="arrangements-booking" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Start Online Booking</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg hover:bg-surface-tint transition-all" href="tel:18005557378">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Call 1-800-555-REST</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-primary text-on-primary pt-space-xl pb-space-lg"><div class="max-w-[1200px] mx-auto px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl border-b border-primary-container"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-tertiary-fixed"><span class="material-symbols-outlined text-[20px]">nature_people</span></div><span class="font-headline-sm text-headline-sm text-surface-bright">Eternal Rest</span></div><p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed">Guiding families through life's most tender moments with dignity, grace, and heartfelt compassion.</p><div class="flex items-center gap-space-xs text-tertiary-fixed-dim font-label-md text-label-md pt-space-xs"><span class="material-symbols-outlined text-[18px]">verified</span><span>A Century of Dedicated Service</span></div></div><div class="flex flex-col gap-space-md"><h3 class="font-headline-sm text-headline-sm text-tertiary-fixed tracking-wide">Compassionate Services</h3><ul class="flex flex-col gap-space-xs font-body-md text-body-md text-primary-fixed-dim"><li class="hover:text-surface-bright transition-colors"><a data-path="services" href="#">Funeral Planning</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="services" href="#">Burial Services</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="services" href="#">Cremation Services</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="services" href="#">Memorial Programs</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="services" href="#">Hearse &amp; Transport</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="services" href="#">Live Streaming</a></li></ul></div><div class="flex flex-col gap-space-md"><h3 class="font-headline-sm text-headline-sm text-tertiary-fixed tracking-wide">Guidance &amp; Support</h3><ul class="flex flex-col gap-space-xs font-body-md text-body-md text-primary-fixed-dim"><li class="hover:text-surface-bright transition-colors"><a data-path="grief-support" href="#">Grief Support Resources</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="pre-planning-guide" href="#">Pre-Planning Guide</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="obituaries" href="#">Obituaries &amp; Condolences</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="faq" href="#">FAQ</a></li><li class="hover:text-surface-bright transition-colors"><a data-path="pricing-and-transparency" href="#">Pricing &amp; Transparency</a></li></ul></div><div class="flex flex-col gap-space-md"><h3 class="font-headline-sm text-headline-sm text-tertiary-fixed tracking-wide">Immediate Assistance</h3><div class="flex flex-col gap-space-sm font-body-md text-body-md text-primary-fixed-dim"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[20px] text-tertiary-fixed mt-0.5">emergency</span><div><p class="font-label-lg text-label-lg text-surface-bright">24/7 Care Line</p><a class="text-tertiary-fixed hover:text-tertiary-fixed-dim font-semibold" href="tel:18005557378">1-800-555-REST</a></div></div><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[20px] text-tertiary-fixed mt-0.5">pin_drop</span><p>1204 Sanctuary Way,<br/>Cathedral Heights, CA</p></div><div class="pt-space-xs"><a class="inline-flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-primary-container text-on-primary hover:bg-surface-tint font-label-md text-label-md transition-colors" data-path="contact" href="#"><span class="material-symbols-outlined text-[16px]">map</span>Interactive Campus Map</a></div><div class="flex items-center gap-space-xs pt-space-xs"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed">mail</span><a class="hover:text-surface-bright transition-colors" href="mailto:care@eternalrestservices.com">care@eternalrestservices.com</a></div></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-primary-fixed-dim font-caption text-caption"><div class="flex flex-col sm:flex-row items-center gap-space-xs sm:gap-space-md text-center sm:text-left"><span>© 2024 Eternal Rest Funeral Services. All rights reserved.</span><span class="hidden sm:inline">•</span><span>Licensed Funeral Establishment #FE-84920</span></div><div class="flex items-center gap-space-md"><a class="hover:text-surface-bright transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-surface-bright transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="hover:text-surface-bright transition-colors" data-path="accessibility" href="#">Accessibility Statement</a></div></div></div></footer></body></html>
